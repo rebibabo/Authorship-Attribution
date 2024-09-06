@@ -18,7 +18,7 @@ for i, author in enumerate(os.listdir("./gcjpy")):
         js = {'author': author, 'label': i, 'code': code}
         dataset.append(js)
 
-split = [0.8, 0.1, 0.1]
+split = [0.9, 0.05, 0.05]
 random.shuffle(dataset)
 train_size = int(len(dataset) * split[0])
 eval_size = int(len(dataset) * split[1])
