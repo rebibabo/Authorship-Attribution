@@ -1,0 +1,7 @@
+python-dotenv
+scikit-learn
+torch
+transformers
+openai
+loguru
+pandas

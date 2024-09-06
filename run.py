@@ -9,7 +9,7 @@ if __name__ == '__main__':
     model_name = 'microsoft/codebert-base'
     train_dataset = MyDataset('./dataset/train.jsonl')
     train_dataset.tokenize(model_name, 'code', do_lower_case=True)
-    train_dataloader = train_dataset.to_dataloader(8, shuffle=True)
+    train_dataloader = train_dataset.to_dataloader(4, shuffle=True)
 
     eval_dataset = MyDataset('./dataset/valid.jsonl')
     eval_dataset.tokenize(model_name, 'code', do_lower_case=True)
@@ -21,8 +21,8 @@ if __name__ == '__main__':
 
     trainer = Trainer(
         model_name=model_name,
-        num_labels=2,
-        epochs=4,
+        num_labels=66,
+        epochs=30,
         lr=2e-5,
         output_dir='saved_models',
         seed=42,

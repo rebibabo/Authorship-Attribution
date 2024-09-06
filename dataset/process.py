@@ -8,6 +8,8 @@ def dump_jsonl(jsons, file_path):
             json.dump(js, f, ensure_ascii=False)
             f.write('\n')
 
+os.system('unzip gcjpy.zip -d gcjpy')
+
 dataset = []
 for i, author in enumerate(os.listdir("./gcjpy")):
     for file in os.listdir("./gcjpy/" + author):
